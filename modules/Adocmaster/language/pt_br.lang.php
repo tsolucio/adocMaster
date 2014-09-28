@@ -9,14 +9,15 @@
  ************************************************************************************/
 
 $mod_strings = Array(
-	'ModuleName' => 'Adoc Master',
-	'SINGLE_ModuleName' => 'Adoc Master',
-	'ModuleName ID' => 'Adoc Master ID',
+	'ModuleName' => 'Nome Módulo',
+	'SINGLE_ModuleName' => 'Nome Módulo',
+	'ModuleName ID' => 'ID Nome Módulo',
 
-	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
-	'LBL_MODULEBLOCK_INFORMATION' => 'Adoc Master Information',
-	'LBL_DESCRIPTION_INFORMATION' => 'Description',
+	'LBL_CUSTOM_INFORMATION' => 'Imformação Customizada',
+	'LBL_MODULEBLOCK_INFORMATION' => 'Informação Bloco Módulo',
+	'LBL_DESCRIPTION_INFORMATION' => 'Descrição',
 
+	'ModuleFieldLabel' => 'Texto Etiqueta Campo Módulo',
 );
 
 ?>
