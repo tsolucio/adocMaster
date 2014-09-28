@@ -12,12 +12,10 @@
  * See the License for the specific language governing permissions and limitations under the
  * License terms of Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (the License).
  *************************************************************************************************
- *  Module       : Adecuaciones
+ *  Module       : Adoc Master
  *  Version      : 5.4.0
  *  Author       : Opencubed
  *************************************************************************************************/
-
-
 
 require_once('include/utils/Module_Tables.php');
                 require_once('include/utils/utils.php');

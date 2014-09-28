@@ -12,17 +12,16 @@
  * See the License for the specific language governing permissions and limitations under the
  * License terms of Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (the License).
  *************************************************************************************************
- *  Module       : Adecuaciones
+ *  Module       : Adoc Master
  *  Version      : 5.4.0
  *  Author       : Opencubed
  *************************************************************************************************/
 global $adb,$log,$current_user;
 
- require_once('modules/Adocmaster/Adocmaster.php');
- require_once('modules/Adocdetail/Adocdetail.php');
+require_once('modules/Adocmaster/Adocmaster.php');
+require_once('modules/Adocdetail/Adocdetail.php');
 
-
- $laprueva=$_REQUEST['record'];
+$laprueva=$_REQUEST['record'];
 $sot=$_REQUEST['sot'];
 
 $sot2=$_REQUEST['sot2'];

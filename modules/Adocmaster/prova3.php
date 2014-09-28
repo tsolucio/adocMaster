@@ -12,14 +12,11 @@
  * See the License for the specific language governing permissions and limitations under the
  * License terms of Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (the License).
  *************************************************************************************************
- *  Module       : Adecuaciones
+ *  Module       : Adoc Master
  *  Version      : 5.4.0
  *  Author       : Opencubed
  *************************************************************************************************/
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- 
 require_once('modules/Adocmaster/Adocmaster.php');
 
 global $adb,$current_user;
@@ -37,8 +34,8 @@ $adb->pquery("Update vtiger_adocdetail
 $adb->pquery("Update vtiger_adocdetail
     set adoc_quantity=? where adocdetailid=?",array($sasia,$idja));*/
 
- require_once('modules/Adocmaster/Adocmaster.php');
- require_once('modules/Adocdetail/Adocdetail.php');
+require_once('modules/Adocmaster/Adocmaster.php');
+require_once('modules/Adocdetail/Adocdetail.php');
 
 global $adb,$current_user;
 $sot5=$_REQUEST['sot5'];
