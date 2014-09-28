@@ -1,21 +1,12 @@
-<?php 
- /*************************************************************************************************
- * Copyright 2014 Opencubed -- This file is a part of TSOLUCIO coreBOS customizations.
- * You can copy, adapt and distribute the work under the "Attribution-NonCommercial-ShareAlike"
- * Vizsage Public License (the "License"). You may not use this file except in compliance with the
- * License. Roughly speaking, non-commercial users may share and modify this code, but must give credit
- * and share improvements. However, for proper details please read the full License, available at
- * http://vizsage.com/license/Vizsage-License-BY-NC-SA.html and the handy reference for understanding
- * the full license at http://vizsage.com/license/Vizsage-Deed-BY-NC-SA.html. Unless required by
- * applicable law or agreed to in writing, any software distributed under the License is distributed
- * on an  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and limitations under the
- * License terms of Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (the License).
- *************************************************************************************************
- *  Module       : Adecuaciones
- *  Version      : 5.4.0
- *  Author       : Opencubed
- *************************************************************************************************/
+<?php
+/*+**********************************************************************************
+ * The contents of this file are subject to the vtiger CRM Public License Version 1.0
+ * ("License"); You may not use this file except in compliance with the License
+ * The Original Code is:  vtiger CRM Open Source
+ * The Initial Developer of the Original Code is vtiger.
+ * Portions created by vtiger are Copyright (C) vtiger.
+ * All Rights Reserved.
+ ************************************************************************************/
 require_once('data/CRMEntity.php');
 require_once('data/Tracker.php');
 
@@ -102,8 +93,7 @@ function __construct() {
 	}
 
 	function save_module($module) {
-      
-        }
+	}
 
 	/**
 	 * Return query to use based on given modulename, fieldname
@@ -245,6 +235,7 @@ function __construct() {
 				" WHERE uitype='10' AND vtiger_fieldmodulerel.module=?", array($thismodule));
 		$linkedFieldsCount = $this->db->num_rows($linkedModulesQuery);
 
+		$rel_mods[$this->table_name] = 1;
 		for($i=0; $i<$linkedFieldsCount; $i++) {
 			$related_module = $this->db->query_result($linkedModulesQuery, $i, 'relmodule');
 			$fieldname = $this->db->query_result($linkedModulesQuery, $i, 'fieldname');
@@ -253,7 +244,17 @@ function __construct() {
 			$other = CRMEntity::getInstance($related_module);
 			vtlib_setup_modulevars($related_module, $other);
 			
-			$query .= " LEFT JOIN $other->table_name ON $other->table_name.$other->table_index = $this->table_name.$columnname";
+			if($rel_mods[$other->table_name]) {
+				$rel_mods[$other->table_name] = $rel_mods[$other->table_name] + 1;
+				$alias = $other->table_name.$rel_mods[$other->table_name];
+				$query_append = "as $alias";
+			} else {
+				$alias = $other->table_name;
+				$query_append = '';
+				$rel_mods[$other->table_name] = 1;	
+			}
+			
+			$query .= " LEFT JOIN $other->table_name $query_append ON $alias.$other->table_index = $this->table_name.$columnname";
 		}
 
 		$query .= $this->getNonAdminAccessControlQuery($thismodule,$current_user);
@@ -391,6 +392,7 @@ function __construct() {
 	function vtlib_handler($modulename, $event_type) {
 		if($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
+			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');
 		} else if($event_type == 'module.disabled') {
 			// TODO Handle actions when this module is disabled.
 		} else if($event_type == 'module.enabled') {
@@ -432,4 +434,4 @@ function __construct() {
 	 */
 	//function get_dependents_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
 }
- ?>
+?>
