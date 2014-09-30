@@ -1,5 +1,5 @@
 <?php
- /*************************************************************************************************
+/*************************************************************************************************
  * Copyright 2014 Opencubed -- This file is a part of TSOLUCIO coreBOS customizations.
  * You can copy, adapt and distribute the work under the "Attribution-NonCommercial-ShareAlike"
  * Vizsage Public License (the "License"). You may not use this file except in compliance with the
@@ -12,11 +12,10 @@
  * See the License for the specific language governing permissions and limitations under the
  * License terms of Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (the License).
  *************************************************************************************************
- *  Module       : Adoc Master
+ *  Module       : Adocmaster
  *  Version      : 5.4.0
  *  Author       : Opencubed
  *************************************************************************************************/
-
 function test($entity_id,$date){
 global $adb,$log,$current_user;
 $paymentid=$entity_id;//$_REQUEST['paymentid']

@@ -108,7 +108,7 @@ require_once('include/utils/Module_Tables.php');
                       if(strpos($columns,'smownerid')!==false)
                        {   array_push($col,'smownerid');}
                       if(strpos($columns,'createdtime')!==false)
-                       {   array_push(,'createdtime');}
+                       {   array_push($col,'createdtime');}
                        if(strpos($columns,'modifiedtime')!==false)
                        {   array_push($col,'modifiedtime');}
 
