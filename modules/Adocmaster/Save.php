@@ -18,7 +18,6 @@ setObjectValuesFromRequest($focus);
 
 $mode = $_REQUEST['mode'];
 $record=$_REQUEST['record'];
-
 if($mode) $focus->mode = $mode;
 if($record)$focus->id  = $record;
 
