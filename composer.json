@@ -1,4 +1,17 @@
 {
   "name": "tsolucio/adocMaster",
-  "type": "corebos-module"
+  "type": "corebos-module",
+  "repositories": [
+    {
+    "type": "vcs",
+    "url": "https://github.com/tsolucio/adocDetail"
+    },
+    {
+     "packagist": false
+    }
+  ],
+  "require": {
+    "tsolucio/adocDetail": "dev-master"
+  }
+  
 }
