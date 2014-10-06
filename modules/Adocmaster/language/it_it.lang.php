@@ -8,14 +8,30 @@
 - * All Rights Reserved.
 - ************************************************************************************/
 $mod_strings = Array(
-	'ModuleName' => 'Module Name',
-	'SINGLE_ModuleName' => 'Module Name',
-	'ModuleName ID' => 'Module Name ID',
-
-	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
+	'Adocmaster' => 'Adocmaster',
+	'SINGLE_Adocmaster' => 'Adocmaster',
+	'Adocmaster ID' => 'Adocmaster ID',
+        'LBL_CUSTOM_INFORMATION' => 'Custom Information',
 	'LBL_MODULEBLOCK_INFORMATION' => 'ModuleBlock Information',
-
+        'Information'=>'Informazioni',
+        'Adocmaster Information'=>'Informazioni Adocmaster',
+        'LBL_ADDRESS_INFORMATION'=>'Informazioni Indirizzo',
+        'LBL_ECONOMIC_INFORMATION'=>'Informazioni Economiche',
 	'ModuleFieldLabel' => 'ModuleFieldLabel Text',
+        'Adocmaster Name'=>'Adocmaster Nome',
+        'Organization'=>'Organizzazione',
+        'DocDate From'=>'DocDate Da',
+        'Doc Date To'=>'DocDate a',
+        'Country Name'=>'Nome Paese',
+        'Address'=>'Indirizzo',
+        'City Name'=>'Nome citta',
+        'Description'=>'Descrizione',
+        'Doc Type'=>'Tipo Documento',
+        'Assigned To'=>'Assegnato a',
+        'Created Time'=>'Tempo creazione',
+        'Modified Time'=>'Tempo modificazione',
+        'Tax'=>'Tassa',
+        'Total Amount'=>'Totale quantita',
 );
 
 ?>
