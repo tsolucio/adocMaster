@@ -9,14 +9,36 @@
  ************************************************************************************/
 
 $mod_strings = Array(
-	'ModuleName' => 'Adoc Master',
-	'SINGLE_ModuleName' => 'Adoc Master',
-	'ModuleName ID' => 'Adoc Master ID',
-
-	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
-	'LBL_MODULEBLOCK_INFORMATION' => 'Adoc Master Information',
-	'LBL_DESCRIPTION_INFORMATION' => 'Description',
-
+	'Adocmaster' => 'Adocmaster',
+	'SINGLE_Adocmaster' => 'Adocmaster',
+	'Adocmaster ID' => 'Adocmaster ID',
+        'LBL_CUSTOM_INFORMATION' => 'Custom Information',
+	'LBL_MODULEBLOCK_INFORMATION' => 'ModuleBlock Information',
+        'LBL_ADDRESS_INFORMATION'=>'Address Information',
+        'LBL_ECONOMIC_INFORMATION'=>'Economic Information',
+	'ModuleFieldLabel' => 'ModuleFieldLabel Text',
+        'Tipo anagrafica'=>'Anagrafica type',
+        'Info chiamata'=>'Project Information',
+        'Valore'=>'Value',
+        'Codice Iva'=>'Iva Code',
+        'Adocmaster Chiave Field'=>'Adocmaster Key Field',
+        'Causale adocmaster'=>'Causal adocmaster',
+        'Fornitore'=>'Supplier',
+        'Valuta'=>'Currency',
+        'Chiamata'=>'Project',
+        'Data di consegna'=>'Delivery date',
+        'Numero Tracking'=>'Tracking Number',
+        'Indirizzo cliente'=>'Client Address',
+        'Cellulare'=>'Mobile Phone',
+        'Telefono'=>'Telephone',
+        'Imponibile'=>'Taxable',
+        'Totale Imponibile IVA'=>'IVA total taxable',
+        'Non Imponibile'=>'Non taxable',
+        'Costo di trasporto'=>'Transport cost',
+        'Altri Costi'=>'Other costs',
+        'Committente'=>'Customer',
+        'Azienda / Cliente'=>'Company/Client',
+        'Indirizzo Committente'=>'Customer Address',
 );
 
 ?>
