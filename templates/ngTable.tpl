@@ -9,15 +9,15 @@
 
     <link data-require="ng-table@*" data-semver="0.3.0" rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
     <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="modules/test2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="modules/test2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="modules/Adocmaster/angulareditable/css/bootstrap.min.css">
+        <link rel="stylesheet" href="modules/Adocmaster/angulareditable/css/bootstrap-theme.min.css">
        
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     
-       <script src="modules/test2/js/angular.min.js"></script>
-        <script src="modules/test2/ng-table.js"></script>
+       <script src="modules/Adocmaster/angulareditable/js/angular.min.js"></script>
+        <script src="modules/Adocmaster/angulareditable/ng-table.js"></script>
         
-        <link rel="stylesheet" href="modules/test2/ng-table.css">
+        <link rel="stylesheet" href="modules/Adocmaster/angulareditable/ng-table.css">
     
 
 <!--<h1>Table with pagination</h1>-->
@@ -188,7 +188,7 @@ $smarty = new vtigerCRM_Smarty;
                    {literal} {{user.pcprice*user.pcquantity}} {/literal}
                 </td>-->
                 <td data-title="'Product'" >
-                {literal}<img ng-if="user.image!=''" src="{{user.image}}" width="50" height="30"/>{/literal}<br/>
+                
                <span ng-if="!user.$edit">
                    {literal}{{user.adoc_product_display}}{/literal}</span>
                 <div ng-if="user.$edit">
