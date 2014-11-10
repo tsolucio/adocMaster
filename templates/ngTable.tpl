@@ -26,16 +26,6 @@
 
 </table>
 <div ng-controller="DemoCtrl" ng-app="demoApp">
-     Grouping by:
-    <select ng-model="groupby">
-        <option value="---">---</option>
-        <option value="adoc_product_display">Product</option>
-        <option value="quantity">Quantity</option>
-        <option value="price">Price</option>
-        
-        
-    </select>
-    <br>
 <!--{literal}{{getTotal()}}{/literal}
 {literal}{{getTax()}}{/literal}
 {literal}{{getTotal2()}}{/literal}-->
@@ -61,15 +51,25 @@ $smarty = new vtigerCRM_Smarty;
 
 $smarty->assign('prodiri',$prodname);
 {/php}
-
-<br> <button type="button" ng-click="addAdocdetail2(user.quantity2);">Add  Adocdetail</button>
-
-<br><br>Choose Product :<input type="text" id="adoc_product2_display" ng-model="user.adoc_product2_display" name="adoc_product2_display">
-                   <input type="hidden" value="{literal}{{user.adoc_product2}}{/literal}" id="adoc_product2" name="adoc_product2" >
-                    <img src="themes/softed/images/select.gif"  alt="Select" title="Select" LANGUAGE=javascript  onclick='return window.open("index.php?module=Products&action=Popup&html=Popup_picker&form=vtlibPopupView&forfield=adoc_product2&srcmodule=","test","width=640,height=602,resizable=0,scrollbars=0,top=150,left=200");' align="absmiddle" style='cursor:hand;cursor:pointer'>
-       Choose Quantity : <input id="quantity2" type="text" ng-model="user.quantity2">  
-      <br><br>
-  <!--<p><strong>Filter:</strong> {literal}{{tableParams.filter()|json}}{/literal}-->
+<div id='adocactionbar' style='width:100%'>
+<span>
+<br> <button type="button" ng-click="addAdocdetail2(user.quantity2);">Add  Adocdetail</button>&nbsp;&nbsp;
+Choose Product :&nbsp;<input type="text" id="adoc_product2_display" ng-model="user.adoc_product2_display" name="adoc_product2_display">
+	<input type="hidden" value="{literal}{{user.adoc_product2}}{/literal}" id="adoc_product2" name="adoc_product2" >
+	<img src="themes/softed/images/select.gif"  alt="Select" title="Select" LANGUAGE=javascript  onclick='return window.open("index.php?module=Products&action=Popup&html=Popup_picker&form=vtlibPopupView&forfield=adoc_product2&srcmodule=","test","width=640,height=602,resizable=0,scrollbars=0,top=150,left=200");' align="absmiddle" style='cursor:hand;cursor:pointer'>
+&nbsp;&nbsp;Choose Quantity :&nbsp; <input id="quantity2" type="text" ng-model="user.quantity2">
+</span><span style="float: right">
+Grouping by:&nbsp;
+<select ng-model="groupby">
+	<option value="---">---</option>
+	<option value="adoc_product_display">Product</option>
+	<option value="quantity">Quantity</option>
+	<option value="price">Price</option>
+</select>
+<br><br>
+</span>
+</div>
+<!--<p><strong>Filter:</strong> {literal}{{tableParams.filter()|json}}{/literal}-->
 {php}
 //require_once('Smarty_setup.php');
 //require_once("modules/Adocmaster/Adocmaster.php");
@@ -103,8 +103,7 @@ $smarty->assign('prodiri',$prodname);
             <td style="width:10%">Adocdtotal</td>
             <td style="width:10%">Adocdtax</td>
             <td style="width:10%">Total</td>
-            <td style="width:10%">Actions</td>
-            
+            <td style="width:10%" colspan=2>Actions</td>
             </tr>
           <!--  <tr ng-repeat="user in $data">
                 <td data-title="'AdocdetailNo'" sortable="'name'">
@@ -141,12 +140,11 @@ $smarty->assign('prodiri',$prodname);
             </td>
         </tr>
         <tr ng-hide="group.$hideRows" ng-repeat="user in group.data" >
-            
            <td data-title="'AdocdetailNo'" sortable="'name'">
                   <a href="index.php?module=Adocdetail&action=DetailView&record={literal}{{user.adocdetailid}}{/literal}">  {literal}{{user.name}}{/literal}</a>
                 </td>
                 <td data-title="'Nr Line'" sortable="'age'">
-                 <span ng-if="!user.$edit">  {literal} {{user.age}} {/literal}</span>
+                 <span ng-if="!user.$edit">{literal} {{user.age}} {/literal}</span>
                 <div ng-if="user.$edit"><input class="form-control" type="text" ng-model="user.age" /></div>
                 </td>
          <!--       <td data-title="'Codice_Articolo'" sortable="'codice_articolo'">
@@ -169,7 +167,6 @@ $smarty->assign('prodiri',$prodname);
                <span ng-if="!user.$edit">
                    {literal}{{user.adoc_product_display}}{/literal}</span>
                 <div ng-if="user.$edit">
-                    
                   <input type="text" id="adoc_product_display" ng-model="user.adoc_product_display" name="adoc_product_display">
                    <input type="hidden" value="{literal}{{user.adoc_product}}{/literal}" id="adoc_product" name="adoc_product" >
                     <img src="themes/softed/images/select.gif"  alt="Select" title="Select" LANGUAGE=javascript  onclick='return window.open("index.php?module=Products&action=Popup&html=Popup_picker&form=vtlibPopupView&forfield=adoc_product&srcmodule=","test","width=640,height=602,resizable=0,scrollbars=0,top=150,left=200");' align="absmiddle" style='cursor:hand;cursor:pointer'>
@@ -182,12 +179,10 @@ $smarty->assign('prodiri',$prodname);
                  <td data-title="'Price'" sortable="'precio'">
                  {literal} {{user.precio}} {/literal}
                  <input type="hidden" value="{literal}{{user.precio}}{/literal}" id="precio">
-                 
                 </td>
                 <td data-title="'AdocPrice'" sortable="'price'">
                  <span ng-if="!user.$edit">{literal} {{user.price}} {/literal}</span>
                  <div ng-if="user.$edit"><input class="form-control" type="text" ng-model="user.price"/></div>
-                
                 </td>
                  <td data-title="'Adocdtotal'" sortable="'adocdtotal'">
                    {literal} {{(user.quantity*user.price)+(user.quantity*user.price*user.vat)| number:2}} {/literal}
@@ -211,7 +206,6 @@ $smarty->assign('prodiri',$prodname);
              <td>
                 [<a href ng:click="removeItem($index,user.adocdetailid)">X</a>]
             </td>
-            
         </tr>
         </tbody>
     </table>
