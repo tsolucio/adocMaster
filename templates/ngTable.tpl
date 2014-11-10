@@ -204,7 +204,7 @@ Grouping by:&nbsp;
                 <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;">Cancel</a>
             </td>
              <td>
-                [<a href ng:click="removeItem($index,user.adocdetailid,user.adocmasterid)">X</a>]
+                [<a href ng:click="removeItem($index,user.adocdetailid)">X</a>]
             </td>
         </tr>
         </tbody>
@@ -319,13 +319,15 @@ Grouping by:&nbsp;
     })
    };
      $scope.removeItem = function(index,adocdetailid,adocmasterid) {
+         var deleteconfirmation=confirm("do you really want to delete this adocdetail?");
+         if(deleteconfirmation == true){
         $scope.myData.splice(index, 1);
         $scope.tableParams.reload();
         $http.post('index.php?'+kURL+'&kaction=delete&adocdelete='+adocdetailid+'&totdelete='+$scope.getTotal()+'&adocmasterdelete='+adocmasterid
                 )
               .success(function(data, status) {
-         // alert('deleting');
-                 });
+              $scope.tableParams.reload();
+                 });}
     }
      $scope.getTotal=function(){
        var total = 0;
