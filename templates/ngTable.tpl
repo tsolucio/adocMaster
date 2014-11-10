@@ -204,7 +204,7 @@ Grouping by:&nbsp;
                 <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;">Cancel</a>
             </td>
              <td>
-                [<a href ng:click="removeItem($index,user.adocdetailid,use.adocmasterid)">X</a>]
+                [<a href ng:click="removeItem($index,user.adocdetailid,user.adocmasterid)">X</a>]
             </td>
         </tr>
         </tbody>
