@@ -53,18 +53,18 @@ $smarty->assign('prodiri',$prodname);
 {/php}
 <div id='adocactionbar' style='width:100%'>
 <span>
-<br> <button type="button" ng-click="addAdocdetail2(user.quantity2);">Add  Adocdetail</button>&nbsp;&nbsp;
-Choose Product :&nbsp;<input type="text" id="adoc_product2_display" ng-model="user.adoc_product2_display" name="adoc_product2_display">
+<br> <button type="button" ng-click="addAdocdetail2(user.quantity2);">{$MOD.NGADDBUTTON}</button>&nbsp;&nbsp;
+{$MOD.NGPRODUCTINPUT}&nbsp;<input type="text" id="adoc_product2_display" ng-model="user.adoc_product2_display" name="adoc_product2_display">
 	<input type="hidden" value="{literal}{{user.adoc_product2}}{/literal}" id="adoc_product2" name="adoc_product2" >
 	<img src="themes/softed/images/select.gif"  alt="Select" title="Select" LANGUAGE=javascript  onclick='return window.open("index.php?module=Products&action=Popup&html=Popup_picker&form=vtlibPopupView&forfield=adoc_product2&srcmodule=","test","width=640,height=602,resizable=0,scrollbars=0,top=150,left=200");' align="absmiddle" style='cursor:hand;cursor:pointer'>
-&nbsp;&nbsp;Choose Quantity :&nbsp; <input id="quantity2" type="text" ng-model="user.quantity2">
+&nbsp;&nbsp;{$MOD.NGQUANTITYINPUT}&nbsp; <input id="quantity2" type="text" ng-model="user.quantity2">
 </span><span style="float: right">
-Grouping by:&nbsp;
+{$MOD.NGGROUPBY}&nbsp;
 <select ng-model="groupby">
-	<option value="---">---</option>
-	<option value="adoc_product_display">Product</option>
-	<option value="quantity">Quantity</option>
-	<option value="price">Price</option>
+	<option value="---">{$MOD.NGNONE}</option>
+	<option value="adoc_product_display">{$MOD.NGPRODUCT}</option>
+	<option value="quantity">{$MOD.NGQUANTITY}</option>
+	<option value="price">{$MOD.NGPRICE}</option>
 </select>
 <br><br>
 </span>
@@ -94,16 +94,16 @@ Grouping by:&nbsp;
 
         <table ng-table="tableParams"  class="table">
             <tr>
-            <td style="width:5%">AdocdetailNo</td>
-            <td style="width:5%">NrLine</td>
-            <td style="width:15%">Product</td>
-            <td style="width:5%">Quantity</td>
-            <td style="width:5%">Price</td>
-            <td style="width:5%">AdocPrice</td>
-            <td style="width:10%">Adocdtotal</td>
-            <td style="width:10%">Adocdtax</td>
-            <td style="width:10%">Total</td>
-            <td style="width:10%" colspan=2>Actions</td>
+            <td style="width:5%">{$MOD.NGADOCDETAILNO}</td>
+            <td style="width:5%">{$MOD.NGNRLINE}</td>
+            <td style="width:15%">{$MOD.NGPRODUCT}</td>
+            <td style="width:5%">{$MOD.NGQUANTITY}</td>
+            <td style="width:5%">{$MOD.NGPRICE}</td>
+            <td style="width:5%">{$MOD.NGADOCPRICE}</td>
+            <td style="width:10%">{$MOD.NGADOCDTOTAL}</td>
+            <td style="width:10%">{$MOD.NGADOCDTAX}</td>
+            <td style="width:10%">{$MOD.NGTOTAL}</td>
+            <td style="width:10%" colspan=2>{$MOD.NGACTIONS}</td>
             </tr>
           <!--  <tr ng-repeat="user in $data">
                 <td data-title="'AdocdetailNo'" sortable="'name'">
@@ -199,9 +199,9 @@ Grouping by:&nbsp;
                  {literal} {{user.quantity*user.price |number:2}} {/literal}
                 </td>
                  <td data-title="'Actions'">
-                <a ng-if="!user.$edit" href="" class="btn btn-default btn-xs" ng-click="user.$edit = true">Edit</a>
-                <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;setEditId(user.discount,user.price,user.pcdetailsid,user.pcquantity,user.pcprice,user.age,user.quantity,user.adocdetailid,user.adocmasterid,user.newtax,user.newadoctotal,user.newadoctotalamount,user.productid,user.adoc_product);">Save</a>
-                <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;">Cancel</a>
+                <a ng-if="!user.$edit" href="" class="btn btn-default btn-xs" ng-click="user.$edit = true">{$MOD.NGEDIT}</a>
+                <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;setEditId(user.discount,user.price,user.pcdetailsid,user.pcquantity,user.pcprice,user.age,user.quantity,user.adocdetailid,user.adocmasterid,user.newtax,user.newadoctotal,user.newadoctotalamount,user.productid,user.adoc_product);">{$MOD.NGSAVE}</a>
+                <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false;">{$MOD.NGCANCEL}</a>
             </td>
              <td>
                 [<a href ng:click="removeItem($index,user.adocdetailid,user.adocmasterid)">X</a>]
