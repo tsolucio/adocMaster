@@ -99,6 +99,25 @@ $mod_strings = Array(
 	'Generate Packing List' => 'Generar Albarán',
 	'Generate PDF' => 'Generar PDF',
 	'DetailViewAdocdetailng' => 'Detalle ADOC',
+	
+	'NGGROUPBY'=>'Agrupar por',
+	'NGPRODUCTINPUT'=>'Elige Producto:',
+	'NGQUANTITYINPUT'=>'Elige Cantidad:',
+	'NGNONE'=>'---',
+	'NGPRODUCT'=>'Producto',
+	'NGQUANTITY'=>'Cantidad',
+	'NGPRICE'=>'Precio',
+	'NGADDBUTTON'=>'Añadir Detalle',
+	'NGADOCDETAILNO'=>'Nº Detalle',
+	'NGNRLINE'=>'Nº Línea',
+	'NGADOCPRICE'=>'Precio',
+	'NGADOCDTOTAL'=>'Total',
+	'NGADOCDTAX'=>'Impuesto',
+	'NGTOTAL'=>'Total',
+	'NGACTIONS'=>'Acciones',
+	'NGEDIT'=>'Editar',
+	'NGSAVE'=>'Guardar',
+	'NGCANCEL'=>'Cancelar',
 );
 
 ?>
