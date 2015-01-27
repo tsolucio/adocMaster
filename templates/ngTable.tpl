@@ -265,9 +265,9 @@ $smarty->assign('prodiri',$prodname);
             });
              $scope.$watch('groupby', function(value){
                         $scope.tableParams.settings().groupBy = value;
-                        console.log('Scope Value', $scope.groupby);
-                        console.log('Watch value', this.last);
-                        console.log('new table',$scope.tableParams);
+                        // console.log('Scope Value', $scope.groupby);
+                        // console.log('Watch value', this.last);
+                        // console.log('new table',$scope.tableParams);
                         $scope.tableParams.reload();
                     });
                          $http.post('index.php?'+kURL+'&kaction=update&record='+record+'&shembulli='+record
